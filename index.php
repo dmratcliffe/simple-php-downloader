@@ -27,7 +27,7 @@
                 File Server
                 <h1>Login</h1>
                 <form mehtod="post">
-                    <input type="text" class="text-in" name="passphrase">
+                    <input type="text" class="text-in" name="passphrase" type="password">
                     <br>
                     <input type="submit" class="btn" value="login">
                 </form>
