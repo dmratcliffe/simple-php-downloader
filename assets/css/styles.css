@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #242861;
+    background-color: #242861; /* change this for the 'theme' of the site [keep it dark :)] */
 }
 .login{
     width: 100%;
@@ -49,4 +49,47 @@ body{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+.files{
+    width: 95%;
+    max-width: 1240px;
+    position: relative;
+    margin: 100px auto 30px;
+}
+
+.files .cur-path{
+    color: white;
+    margin-left: 25px;
+    font-size: 24px;
+    user-select: none;
+}
+
+table{
+	color: white;
+	border-collapse: collapse; 
+	border-spacing:0;
+}
+tbody tr{
+	box-shadow: 2px 2px 7px 4px rgba(0, 0, 0, 0);
+    transition: box-shadow .3s;
+}
+tbody tr:hover{
+	box-shadow: 2px 2px 7px 4px rgba(0, 0, 0, .3);
+	transition: box-shadow .3s;
+	cursor: pointer;
+}
+tr{
+	border-radius: 50px;
+}
+th{
+	padding-bottom: 20px;
+}
+.item-name{
+    width: 100%;
+}
+.icon{
+    font-size: 38px;
+    padding: 10px;
+    color: rgba(255, 255, 255, .6);
 }
