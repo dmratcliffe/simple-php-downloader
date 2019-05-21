@@ -22,5 +22,10 @@ The format should be like:
 <?php
     $master_password = "ushldchngths";
     $dir = "/the/dir/to/scan/on/your/server";
+    $do_not_scan = array(
+        "/path/you/dont/want/indexed",
+        "/djkalid/another/one"
+    );
 ?>
 '''
+The settings should be pretty self explanatory.

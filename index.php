@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="file-json" style='display: none;'>
+    <div class="file-json" style='display: ;'>
         <?php
             include('assets/php/scan.php');
             if($isauth){
