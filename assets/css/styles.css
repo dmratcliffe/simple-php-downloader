@@ -103,6 +103,7 @@ th{
     opacity: 1;
     transition: opacity .5s;
 }
+/* File types are CSS classes */
 .css,
 .html{
     color: purple;
