@@ -25,10 +25,10 @@
     <div class="login" <?php if($isauth) { echo "style='display: none;'"; } ?>>
         <div class="portal">
             <center>
-                File Server
-                <h1>Login</h1>
+                file server
+                <h1>enter passphrase</h1>
                 <form method="post">
-                    <input type="text" class="text-in" name="passphrase" type="password">
+                    <input type="password" class="text-in" name="passphrase" type="password">
                     <br>
                     <input type="submit" class="btn" value="login">
                 </form>
@@ -43,7 +43,7 @@
         <table>
             <table>
                 <tbody class="files">
-                    <tr id="fldr">
+                    <tr id="fldr" class="fldr">
                         <td>
                             <center><i class="icon fas fa-folder"></i></center>
                         </td>
@@ -54,6 +54,24 @@
                             <center><i class="icon fas fa-file-alt"></i></center>
                         </td>
                         <td class="item-name">Example Name</td>
+                    </tr>
+                    <tr id="fl">
+                        <td>
+                            <center><i class="icon fas fa-file-alt css"></i></center>
+                        </td>
+                        <td class="item-name">style.css</td>
+                    </tr>
+                    <tr id="fl">
+                        <td>
+                            <center><i class="icon fas fa-file-alt js"></i></center>
+                        </td>
+                        <td class="item-name">script.js</td>
+                    </tr>
+                    <tr id="fl">
+                        <td>
+                            <center><i class="icon fas fa-file-alt html"></i></center>
+                        </td>
+                        <td class="item-name">page.html</td>
                     </tr>
 
                 </tbody>

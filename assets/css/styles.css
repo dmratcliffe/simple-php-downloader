@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #242861; /* change this for the 'theme' of the site [keep it dark :)] */
+    background-color: #23223a; /* change this for the 'theme' of the site [keep it dark :)] */
 }
 .login{
     width: 100%;
@@ -72,15 +72,18 @@ table{
 }
 tbody tr{
 	box-shadow: 2px 2px 7px 4px rgba(0, 0, 0, 0);
-    transition: box-shadow .3s;
+	transition: box-shadow .3s;
 }
 tbody tr:hover{
-	box-shadow: 2px 2px 7px 4px rgba(0, 0, 0, .3);
-	transition: box-shadow .3s;
+    box-shadow: 2px 2px 7px 4px rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .1);
+	transition: box-shadow background-color .3s;
+}
+.fldr{
 	cursor: pointer;
 }
 tr{
-	border-radius: 50px;
+    border-radius: 10px;
 }
 th{
 	padding-bottom: 20px;
@@ -91,5 +94,19 @@ th{
 .icon{
     font-size: 38px;
     padding: 10px;
-    color: rgba(255, 255, 255, .6);
+    opacity: .6;
+    color: white;
+    cursor: grab;
+    transition: opacity .5s;
+}
+.icon:hover{
+    opacity: 1;
+    transition: opacity .5s;
+}
+.css,
+.html{
+    color: purple;
+}
+.js{
+    color: green;
 }
