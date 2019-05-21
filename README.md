@@ -5,6 +5,9 @@ A self hosted website which allows downloading files from your webserver
 by installing this script on a public webserver all of your files only become as safe as your password.
 You should make sure it's strong or you only expose this file when you need to download files from your server.
 
+*Currently the script has no form of kicking a user off for entering new passwords, and when a user logs in their password hash is saved for 24hrs in a cookie.*
+**Use long safe passwords.**
+
 # the reason this exists
 I needed something to quickly download folder while useing code-server.
 By default code-server lets you download individual files but this didn't work so well for larger files.
@@ -13,4 +16,11 @@ Looking around most file managers require a lot of backend or don't have folder 
 This aims to fill the hole of downloading files and folders from a website, nothing more. (No uploading ect.)
 
 # setup
-TODO after the script is written lmao
+Create a file in /assets/php named 'settings.php'
+The format should be like:
+'''php
+<?php
+    $master_password = "ushldchngths";
+    $dir = "/the/dir/to/scan/on/your/server";
+?>
+'''

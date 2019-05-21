@@ -17,8 +17,12 @@
 <body>
     <div class="file-json" style='display: none;'>
         <?php
+            include('assets/php/scan.php');
             if($isauth){
-                //todo: recursive file search
+                $file_list = rec_search($dir);
+                echo json_encode($file_list);
+            }else{
+                echo 'unauthorized';
             }
         ?>
     </div>
