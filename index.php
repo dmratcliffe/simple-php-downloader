@@ -27,7 +27,7 @@
             <center>
                 file server
                 <h1>enter passphrase</h1>
-                <form method="post">
+                <form method="post" action="./assets/php/auth.php">
                     <input type="password" class="text-in" name="passphrase" type="password">
                     <br>
                     <input type="submit" class="btn" value="login">

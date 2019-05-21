@@ -72,7 +72,8 @@ table{
 }
 tbody tr{
 	box-shadow: 2px 2px 7px 4px rgba(0, 0, 0, 0);
-	transition: box-shadow .3s;
+    transition: box-shadow .3s;
+    user-select: none;
 }
 tbody tr:hover{
     box-shadow: 2px 2px 7px 4px rgba(0, 0, 0, .3);
