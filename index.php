@@ -15,12 +15,18 @@
 </head>
 
 <body>
-    <div class="file-json" style='display: ;'>
+    <div class="file-json" style='display: none;'>
         <?php
             include('assets/php/scan.php');
             if($isauth){
                 $file_list = rec_search($dir);
-                echo json_encode($file_list);
+                $final_list = array(
+                    "type" => "folder",
+                    "path" => $dir,
+                    "parent" => $dir,
+                    "items" => $file_list
+                );
+                echo json_encode($final_list);
             }else{
                 echo 'unauthorized';
             }
@@ -46,7 +52,7 @@
         </div>
         <table>
             <table>
-                <tbody class="files">
+                <tbody class="ftable">
                     <tr id="fldr" class="fldr">
                         <td>
                             <center><i class="icon fas fa-folder"></i></center>
