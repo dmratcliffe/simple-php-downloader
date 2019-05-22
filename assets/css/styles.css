@@ -106,9 +106,25 @@ th{
 }
 /* File types are CSS classes */
 .css,
-.html{
+.html,
+.htm{
     color: purple;
 }
-.js{
+.php{
+    color:blue;
+}
+.js,
+.json{
     color: green;
+}
+.yml,
+.config,
+.md{
+    color: orange;
+}
+.jar{
+    color: brown;
+}
+.gitignore{
+    color: grey;
 }
