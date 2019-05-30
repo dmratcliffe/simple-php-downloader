@@ -13,7 +13,7 @@
                 //info about the file
                 $parent = $dir;
                 $filename = $file;
-                $fullpath = "$parent/$filename";
+                $fullpath = "$parent$filename";
                 $filetype = "file";
 
                 //do not scan list
