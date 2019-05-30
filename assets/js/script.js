@@ -1,5 +1,6 @@
 var history = [];
 var prevent_tr_click = false;
+var cur_path_json;
 
 $(document).ready(function(){
     files_json = $(".file-json").html();
@@ -16,15 +17,28 @@ $(document).ready(function(){
         if(fpath){
             window.open(downloadpath);
         }
+        //TODO this isn't a great way of blocking a click...
         prevent_tr_click = true;
         setTimeout(() => {
             prevent_tr_click = false;
         }, 10);
-
+ 
+    });
+    $(document).on("click", "tbody tr", function(data){
+        if(prevent_tr_click)
+            return;
+        console.log(data.currentTarget);
+        curTar = data.currentTarget;
+        curId = curTar.id;
+        new_folder_index = curId.substring(0, curId.length - 2);
+        if(curId.includes("f")){
+            update_table(cur_path_json.items[new_folder_index]);
+        }
     });
 });
 
 function update_table(fjson){
+    cur_path_json = fjson;
     //history.push(fjson);
     console.log(fjson);
     set_path(fjson.parent);
