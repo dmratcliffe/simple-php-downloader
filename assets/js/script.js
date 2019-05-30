@@ -27,7 +27,6 @@ $(document).ready(function(){
     $(document).on("click", "tbody tr", function(data){
         if(prevent_tr_click)
             return;
-        console.log(data.currentTarget);
         curTar = data.currentTarget;
         curId = curTar.id;
         new_folder_index = curId.substring(0, curId.length - 2);
@@ -41,7 +40,7 @@ function update_table(fjson){
     cur_path_json = fjson;
     //history.push(fjson);
     console.log(fjson);
-    set_path(fjson.parent);
+    set_path(fjson.path);
 
     table = $(".ftable");
     table.html("");
