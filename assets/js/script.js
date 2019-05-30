@@ -1,13 +1,31 @@
-history = [];
+var history = [];
+var prevent_tr_click = false;
 
 $(document).ready(function(){
     files_json = $(".file-json").html();
     files_json = JSON.parse(files_json);
 
     update_table(files_json);
+
+    $(document).on("click", ".icon", function (data){
+        curTar = data.currentTarget;
+        curId = curTar.id;
+        fpath = $(curTar.innerHTML).html(); //TODO find a better way
+
+        downloadpath = "./php/dwn.php?path=" + fpath;
+        if(fpath){
+            window.open(downloadpath);
+        }
+        prevent_tr_click = true;
+        setTimeout(() => {
+            prevent_tr_click = false;
+        }, 10);
+
+    });
 });
 
 function update_table(fjson){
+    //history.push(fjson);
     console.log(fjson);
     set_path(fjson.parent);
 
@@ -15,7 +33,7 @@ function update_table(fjson){
     table.html("");
 
     //if we're at the root
-    if (history.length > 0) {
+    if (history.length > 1) {
         folder = "<tr class='fldr' id='up'><td><center><i class='icon fas fa-folder'></i></center></td><td class='item-name'>..</td></tr>";
         table.append(folder);
     }
