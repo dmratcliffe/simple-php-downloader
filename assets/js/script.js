@@ -6,13 +6,16 @@ $(document).ready(function(){
     files_json = $(".file-json").html();
     files_json = JSON.parse(files_json);
 
+    //initial table
     update_table(files_json);
 
+    //the .. folder
     $(document).on("click", "#up", function(data){
-        breadcrumbs.pop();
+        breadcrumbs.pop(); //the last breadcrumb is where we currently are, pop it first...
         update_table(breadcrumbs.pop());
     });
 
+    //the download function
     $(document).on("click", ".icon", function (data){
         curTar = data.currentTarget;
         curId = curTar.id;
@@ -29,6 +32,8 @@ $(document).ready(function(){
         }, 10);
  
     });
+
+    //the navigation function
     $(document).on("click", "tbody tr", function(data){
         if(prevent_tr_click)
             return;
@@ -55,13 +60,18 @@ function update_table(fjson){
         table.append(folder);
     }
 
+    //TODO sorting functionality
+
+    //get the items of the folder we've been given
     items = fjson.items;
+    //create the folders
     $.each(items, function(index, value){
         value.id = index;
         if(value.type == "folder"){
             table.append(create_folder(value));
         }
     });
+    //create the files
     $.each(items, function(index, value){
         if(value.type == "file"){
             table.append(create_file(value));
