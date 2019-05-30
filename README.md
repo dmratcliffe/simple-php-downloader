@@ -5,7 +5,7 @@ A self hosted website which allows downloading files from your webserver
 by installing this script on a public webserver all of your files only become as safe as your password.
 You should make sure it's strong or you only expose this file when you need to download files from your server.
 
-*Currently the script has no form of kicking a user off for entering new passwords, and when a user logs in their password hash is saved for 24hrs in a cookie.*
+*Currently the script has no form of kicking a user off for entering new passwords, and when a user logs in their password hash is saved for 24hrs in a cookie.* 
 **Use long safe passwords.**
 
 # the reason this exists
@@ -29,3 +29,5 @@ The format should be like:
 ?>
 '''
 The settings should be pretty self explanatory.
+
+You'll also need to make sure that the temp directory in the /assets/php folder is chmod'd to give php rwx. this is for the zipping of the directories. 
