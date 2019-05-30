@@ -1,4 +1,4 @@
-var history = [];
+var breadcrumbs = [];
 var prevent_tr_click = false;
 var cur_path_json;
 
@@ -7,6 +7,11 @@ $(document).ready(function(){
     files_json = JSON.parse(files_json);
 
     update_table(files_json);
+
+    $(document).on("click", "#up", function(data){
+        breadcrumbs.pop();
+        update_table(breadcrumbs.pop());
+    });
 
     $(document).on("click", ".icon", function (data){
         curTar = data.currentTarget;
@@ -38,15 +43,14 @@ $(document).ready(function(){
 
 function update_table(fjson){
     cur_path_json = fjson;
-    //history.push(fjson);
-    console.log(fjson);
+    breadcrumbs.push(fjson);
     set_path(fjson.path);
 
     table = $(".ftable");
     table.html("");
 
     //if we're at the root
-    if (history.length > 1) {
+    if (breadcrumbs.length > 1) {
         folder = "<tr class='fldr' id='up'><td><center><i class='icon fas fa-folder'></i></center></td><td class='item-name'>..</td></tr>";
         table.append(folder);
     }
