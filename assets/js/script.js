@@ -21,7 +21,7 @@ $(document).ready(function(){
         curId = curTar.id;
         fpath = $(curTar.innerHTML).html(); //TODO find a better way
 
-        downloadpath = "./php/dwn.php?path=" + fpath;
+        downloadpath = "./assets/php/dwn.php?path=" + fpath;
         if(fpath){
             window.open(downloadpath);
         }

@@ -1,6 +1,8 @@
 <?php
     include('auth.php');
 
+    $path = isset($_GET['path']) ? $_GET['path'] : false;
+
     if($isauth && $path){
        download($path);
     }else{
