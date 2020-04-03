@@ -33,7 +33,6 @@
             $isauth = auth($cookie_hash);
         }
     }else{
-        $pass_hash = quickhash($pass);
         $isauth = auth(quickhash($pass));
         header("Location: /");
     }
