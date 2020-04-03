@@ -11,9 +11,7 @@
 
     //check a hash against the master password
     function auth($hash_to_check){
-        global $master_password;
-
-        $master_hash = quickhash($master_password);
+        global $master_hash;
 
         if($master_hash == $hash_to_check){
             //log in persistently -- invalidate cache a day later.
